@@ -17,11 +17,14 @@ class Config:
         if self.objective not in available_objectives:
             raise RuntimeError(f"Objective must be one of {available_objectives}")
 
+    output_directory: str | None = None 
     determinstic: bool = True
 
     # Original: "run_obj"
+    # runtime -> time
+    # quality -> performance
     # Question: How to deal with categories here?
-    objective: str = "runtime"
+    objective: str = "performance"
     multi_objective: str | list[str] = "cost"
     save_instantly: bool = False
     crash_cost: float = np.inf
